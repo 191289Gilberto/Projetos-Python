@@ -141,3 +141,5 @@ INFO:root:distancia possui nulos dentro do esperado; 2024-09-02 09:17:50.447291
 INFO:root:Engenharia de features concluída; 2024-09-02 09:17:50.614456
 INFO:root:Conexão com banco estabelecida ; 2024-09-02 09:17:50.614456
 INFO:root:Fim da execução ; 2024-09-02 09:17:50.615453
+INFO:root:Inicio da execução ; 2024-09-02 11:05:11.228096
+INFO:root:Inicio da execução ; 2024-09-02 11:06:37.373964

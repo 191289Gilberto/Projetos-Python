@@ -30,62 +30,18 @@ def data_clean(df, metadados):
     logger.info(f'Saneamento concluído; {datetime.datetime.now()}')
     return df
 
-#def feat_eng(df):
- #  Função ???????????????????????????
-  #  INPUT: ???????????????????????????
-   # OUTPUT: ???????????????????????????
-    #'''
-    #colocar log info
-    #pass
-
-def classifica_hora(hra):
-    '''
-    Classifica a hora do dia em períodos.
-    INPUT: Hora do dia em formato numérico.
-    OUTPUT: String representando o período do dia.
-    '''
-    if 0 <= hra < 6:
-        return "MADRUGADA"
-    elif 6 <= hra < 12:
-        return "MANHA"
-    elif 12 <= hra < 18:
-        return "TARDE"
-    else:
-        return "NOITE"
-
 def feat_eng(df):
     '''
-    Função para realizar a engenharia de features no DataFrame.
-    INPUT: Pandas DataFrame com dados limpos e pré-processados.
-    OUTPUT: Pandas DataFrame com novas colunas de features.
+    Função ???????????????????????????
+    INPUT: ???????????????????????????
+    OUTPUT: ???????????????????????????
     '''
-    # Calcula o tempo de voo esperado em horas
-    df["tempo_voo_esperado"] = (df["datetime_chegada_formatted"] - df["datetime_partida_formatted"]) / pd.Timedelta(hours=1)
-    
-    # Calcula o tempo de voo em horas a partir da coluna `tempo_voo`
-    df["tempo_voo_hr"] = df["tempo_voo"] / 60
-    
-    # Calcula o atraso em horas
-    df["atraso"] = df["tempo_voo_hr"] - df["tempo_voo_esperado"]
-    
-    # Adiciona a coluna do dia da semana
-    df["dia_semana"] = df["data_voo"].dt.day_of_week  # 0 = segunda-feira, etc.
-    
-    # Adiciona a coluna de horário (classificação do período do dia)
-    df["horario"] = df["datetime_partida_formatted"].dt.hour.apply(lambda x: classifica_hora(x))
-    
-    # Adiciona a coluna de status do voo (ONTIME ou ATRASO)
-    df["flg_status"] = df["atraso"].apply(lambda x: "ATRASO" if x > 0.5 else "ONTIME")
-    
-    # Adiciona logs informativos sobre a execução
-    logger.info(f'Engenharia de features concluída; {datetime.datetime.now()}')
-    
-    return df
-
+    #colocar log info
+    pass
 
 def save_data_sqlite(df):
     try:
-        conn = sqlite3.connect("C:/Users/gilbertosilva/OneDrive - ENGELUX DESENVOLVIMENTO IMOBILIARIO LTDA/Documentos/GitHub/Projetos-Python/db-pipeline/data/NyflightsDB.db")
+        conn = sqlite3.connect("data/NyflightsDB.db")
         logger.info(f'Conexão com banco estabelecida ; {datetime.datetime.now()}')
     except:
         logger.error(f'Problema na conexão com banco; {datetime.datetime.now()}')
@@ -97,7 +53,7 @@ def save_data_sqlite(df):
 
 def fetch_sqlite_data(table):
     try:
-        conn = sqlite3.connect("C:/Users/gilbertosilva/OneDrive - ENGELUX DESENVOLVIMENTO IMOBILIARIO LTDA/Documentos/GitHub/Projetos-Python/db-pipeline/data/NyflightsDB.db")
+        conn = sqlite3.connect("data/NyflightsDB.db")
         logger.info(f'Conexão com banco estabelecida ; {datetime.datetime.now()}')
     except:
         logger.error(f'Problema na conexão com banco; {datetime.datetime.now()}')
