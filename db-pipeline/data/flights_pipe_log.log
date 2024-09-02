@@ -1,0 +1,15 @@
+INFO:root:Inicio da execução ; 2024-09-01 21:19:06.399215
+INFO:root:Inicio da execução ; 2024-09-02 08:10:38.966439
+INFO:root:Saneamento concluído; 2024-09-02 08:10:48.865860
+INFO:root:data_voo possui nulos dentro do esperado; 2024-09-02 08:10:48.897105
+INFO:root:datetime_partida possui nulos dentro do esperado; 2024-09-02 08:10:48.912727
+INFO:root:datetime_chegada possui nulos dentro do esperado; 2024-09-02 08:10:48.912727
+INFO:root:origem possui nulos dentro do esperado; 2024-09-02 08:10:48.928347
+INFO:root:destino possui nulos dentro do esperado; 2024-09-02 08:10:48.928347
+INFO:root:companhia possui nulos dentro do esperado; 2024-09-02 08:10:48.944417
+INFO:root:id_voo possui nulos dentro do esperado; 2024-09-02 08:10:48.944417
+INFO:root:id_aeronave possui nulos dentro do esperado; 2024-09-02 08:10:48.960069
+INFO:root:tempo_voo possui nulos dentro do esperado; 2024-09-02 08:10:48.960069
+INFO:root:distancia possui nulos dentro do esperado; 2024-09-02 08:10:48.960069
+INFO:root:Conexão com banco estabelecida ; 2024-09-02 08:10:48.991312
+INFO:root:Fim da execução ; 2024-09-02 08:10:49.006906
